@@ -1,0 +1,1 @@
+pvk2pfx.exe -pvk %1.pvk -pi %2 -po %2 -spc %1.cer -pfx %1.pfx

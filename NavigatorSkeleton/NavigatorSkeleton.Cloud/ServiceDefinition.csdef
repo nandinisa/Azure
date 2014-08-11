@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="NavigatorSkeleton.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-01.2.3">
+  <WorkerRole name="NavigatorSkeleton.Worker" vmsize="Small">
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="https" port="443" certificate="navigatorskeleton.cloudapp.net" />
+    </Endpoints>
+    <Certificates>
+      <Certificate name="navigatorskeleton.cloudapp.net" storeLocation="LocalMachine" storeName="My" />
+      <Certificate name="navigatorskeleton.local" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+  </WorkerRole>
+</ServiceDefinition>
